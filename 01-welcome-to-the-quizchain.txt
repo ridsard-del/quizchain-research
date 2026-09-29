@@ -1,0 +1,60 @@
+Welcome to the Quizchain 
+
+This chapter is an introduction to the quizchain experiment. What it is, what I want to achieve with it, and how to claim prizes.
+What is the quizchain
+
+The basic quizchain idea is to have Bitcoin puzzles linked to each other. In a pure format, you need to solve an earlier block to claim the prize for a later block.
+Bitcoin puzzles already have a large advantage over legacy formats. You don't need to confirm solutions and you don't need to send prizes. That happens all without further work involved. And since all of that is automated, the fairness of the process is assured for everyone. No way that any player gets an unfair advantage in this setup.
+The quizchain element adds many possibilities. For example, block A might need the solution of previous block B. Then block A can not be claimed and the solution not be checked until block B is solved. That way, one can have relatively easy blocks in the chain without seeing them solved immediately, because their survival is protected by another, more difficult block.
+My motivations
+My motivation with this experiment is to find out as much as I can about the format. What are the advantages over legacy Bitcoin puzzles? What use cases and variations of the format are possible? How can I mess up as a puzzle writer when posting (believe me, I have already found lots of answers to that one). How can I avoid those mistakes? How can I make it easier for players? How can I shut out robots from brute forcing answers?
+There is one other little thing that motivates me. No big deal, but another reason that I am not going to stop this before posting the last block, no matter what happens. 
+
+
+How to claim prizes
+The format has evolved a bit over the first 55 blocks. But here is what to
+do, taking block 63 as an example.
+The question for that was:
+How should I call you, darling?
+Format: [solution] TOMI If you don't get this, sorry, it is hard [link]
+Link is all digits of private key for block 62, which starts with L4G and ends in qe3.
+First three digits of hash are 888, another three in a row.
+
+
+Let's explain. First you need to find what to put in [solution]. In this case it was the the correct way to address Alistair Darling in 2009. Or to be precise "The Rt hon Alistair Darling MP". I explain this in detail in chapter 13 of this story. Why that is the solution and how I think someone figured it out without hint in about eight hours. Short version: He was the Chancellor the Bitcoin Genesis Block refers to.
+Then you need to find the wealth. TOMI means wealth in Japanese. But that acronym actually is supposed to mean "Thinking Only Method" for "TOM" and no particular meaning for "I".
+I used to call this field BFUB, short for "brute force user block". If the solution is easily brute forced, I require finding this as well. Since the solution for this particular block is not easily brute forced, I can leave a friendly message in that field. If I do a multiple choice block or have a single capital letter as a solution, figuring out what to put in the TOMI field becomes part of the challenge. 
+The third thing you need is the link to the previous block. I often post it with the question, but if that does not happen, you need to find it by solving the previous block. I use the full private key of the previous block for the link.
+I started out with using only the last three digits, which left the door open to brute force the link (happened with block 43). I then used 7 digits to make brute forcing more expensive. Now as a default I use the whole private key of the previous block, which makes brute forcing a link absolutely impossible.
+I may use only the last seven digits if the previous block is not solved yet and I want to give people the ability to solve the block before the previous one. But default is the whole private key, all digits.
+Putting these three elements together, we resolve the Format in the question: 
+Format: [solution] TOMI If you don't get this, sorry, it is hard [link]
+The Rt Hon Alistair Darling MP TOMI If you don't get this, sorry, it is hard L4GWDY9LD3ZydGCtFaHaaDEJe4YL5hAiSLsLgGzdEVQkNWgZUqu3
+Take that string and do a MD5 hash of it with your favorite hashing tool. Note there is one space between the TOMI field string and the private key, not visible here well because of the line break.
+Then look at the first three digits of the hash, provided in the block post. Here I provided 888.
+If your hash matches, there is a very good chance that you have found the solution. Move on to check further.
+Go to the "Mnemonic Code Converter" tool by lan Coleman, found at iancoleman.io/bip39/. Look for the radio button "Show entropy details". Click that to open an input field and paste your hash to that field. Wait a moment while the tool calculates. Then go down to the Derived
+Addresses section. If you see the address of the funding transaction 
+(provided in the block), bingo, you have the right one. Find the private
+key to the right of that address and sweep it with any Bitcoin wallet software. Look for a menu point like "cold storage" to sweep a private key.
+Only one thing left to do now. Please do a short comment where you tell people that you solved the block. If it is not part of a series that has unsolved blocks in it, also post your solution.
+This shows me that a human has solved the block, not some bot running around trying random solutions. It also shows other players that I am not taking funds back after posting, but someone actually claimed the prize. It is also just common courtesy to me as a sponsor (though I have learned not to expect that from all winners).
+More importantly, explain how you found the solution. That is interesting feedback for me as a writer and for other players who may learn something. On the other hand, maybe you don't want them to learn...
+So, that is an introduction to claim prizes. One important thing left to understand now. Don't fall for giveaway scammers impersonating me. No one has bothered yet, but that fortunate state of affairs may change. Read the last section to avoid falling for what the Chinese called a type 20 scam in the 17th Century.
+Chinese Bribe Scam
+So I am reading the Book of Swindles published in 1617 to improve my misdirection skills. Very interesting book, shows that scammers in China knew some nice tricks hundreds of years ago. This particular one is the classic type 20 fraud.
+It is a short story from that collection, told from my memory now. The victim of the scam is a young student who wants to cheat at the examination. The way that was done in China in 1604 was handing silver directly to the examiner, since Bitcoin was only invented in 1603 and the bribing industry had not caught wind of this new way of doing business yet. 
+So the young student wants to get his silver to the examiner. He has a problem. Bribing is illegal. If he gets caught, there go his chances.
+So a friendly and helpful broker handles the transaction for him. He instructs the student to wait before the school building. Lets him watch as he hands the silver over to the examiner. The student is happy with the service, pays the broker for his trouble and arranges a nice banquet to celebrate his good luck of securing a top place in the coming
+examinations.
+The examinations come. The results are announced. The student's name is not on the list of successful candidates.
+And as the author reveals, the silver actually was not handed to the examiner, but to a guy paid by the broker posing in a costume as the examiner.
+So, let's take this little story and make a simple quiz from it. You are the student. I am the examiner. You want to bribe me. If you transfer your 
+funds to the wrong address or use the wrong amount, you will fail in the examination or need to succeed by your own brains.
+(Quiz question left out here).
+And just to be sure, I will NEVER ask for or accept a bribe for giving access to hints. Under no circumstances will I go around and ask for money from you. Unfortunately that is the basic pattern of giveaway scams like the Nigerian. So let's make that clear while no one bothers to impersonate me. One reason I post this easy quiz now is that I wanted to say this loud and clear while scammers are still absent from this little experiment.
+If anyone says something to the contrary, check very well whom you are dealing with. So not to fall for such a type 20 scam as the student in that
+story. 
+Minmins
+"Minmin" is a word I created for this quizchain. It means "someone playing the quizchain without using scripting, by thinking only". It comes from the short slogan "mine with your mind", which in turn uses the fact that "mine" and "mind" share the first three letters. I wanted to create a short name for honest players challenging the quizchain. And I think this might work for that purpose. So when I talk about "Minmins", that means you, my smart and talented wizard players.
+Thank you for playing the quizchain.
